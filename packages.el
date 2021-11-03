@@ -50,7 +50,6 @@
 ;(unpin! t)
 
 (package! evil-tutor)
-(package! org-roam)
 (package! calibredb)
 (package! org-auto-tangle)
 (package! nov)
