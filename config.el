@@ -23,10 +23,10 @@
 (setq org-clock-sound "~/Music/sonidos/bell.wav")
 
 ;; Org mode
-(setq org-directory "~/RoamNotes")
+(setq org-directory "~/org")
 (after! org
   (setq org-agenda-files
-        '("~/RoamNotes")))
+        '("~/org")))
 
 (setq org-pomodoro-length 25)
 
@@ -73,8 +73,7 @@
   (setq calibredb-library-alist '(("~/home/holymc2/Calibre Library")))
   (setq calibredb-virtual-library-alist '(("1. Development - work" . "work \\(pdf\\|epub\\)")
                                           ("2. Read it later" . "Readit epub")
-                                          ("3. Development" . "dev")))
-  (setq turn-off-evil-mode t))
+                                          ("3. Development" . "dev"))))
 
   (map! :leader
         ;;:prefix ("t". "toggle")
@@ -91,7 +90,6 @@
 
 ;; ESC cancels all
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
-
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
