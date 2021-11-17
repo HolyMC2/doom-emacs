@@ -54,6 +54,8 @@
 (package! org-auto-tangle)
 (package! nov)
 (package! info-colors)
+(package! org-ol-tree
+  :recipe (:host github :repo "Townk/org-ol-tree"))
 
 ;;(package! pyenv-mode)
 

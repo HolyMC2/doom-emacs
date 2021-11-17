@@ -98,6 +98,15 @@
   (setq nov-text-width t)
   (setq nov-variable-pitch nil))
 
+;; Org heading minimap
+(use-package! org-ol-tree
+  :commands org-ol-tree)
+
+(map! :map org-mode-map
+      :after org
+      :localleader
+      :desc "Outline" "O" #'org-ol-tree)
+
 ;; ESC cancels all
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
