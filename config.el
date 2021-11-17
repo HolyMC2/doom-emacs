@@ -66,12 +66,13 @@
       ;; If using org-roam-protocol
       (require 'org-roam-protocol))
 ;; Org chef
+(after! org-capture
 (setq org-capture-templates
       '(("c" "Cookbook" entry (file "~/org/cookbook.org")
          "%(org-chef-get-recipe-from-url)"
          :empty-lines 1)
         ("m" "Manual Cookbook" entry (file "~/org/cookbook.org")
-         "* %^{Recipe title: }\n  :PROPERTIES:\n  :source-url:\n  :servings:\n  :prep-time:\n  :cook-time:\n  :ready-in:\n  :END:\n** Ingredients\n   %?\n** Directions\n\n")))
+         "* %^{Recipe title: }\n  :PROPERTIES:\n  :source-url:\n  :servings:\n  :prep-time:\n  :cook-time:\n  :ready-in:\n  :END:\n** Ingredients\n   %?\n** Directions\n\n"))))
 
 
 ;; commonly-used org file
