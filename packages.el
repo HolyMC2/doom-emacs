@@ -56,7 +56,7 @@
 (package! info-colors)
 (package! org-ol-tree
   :recipe (:host github :repo "Townk/org-ol-tree"))
-
+(package! org-chef)
 ;;(package! pyenv-mode)
 
 (package! gitconfig-mode
