@@ -1,23 +1,25 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
-;; Place your private configuration here! Remember, you do not need to run 'doom
-;; sync' after modifying this file!
-
-
-;; Some functionality uses this to identify you, e.g. GPG configuration, email
-;; clients, file templates and snippets.
+;; My user information
 (setq user-full-name "Marco Antonio Ponce Valdez"
-      user-mail-address "marcoantonioponcevaldez@gmail.com"
-      doom-font (font-spec :family "Hack" :size 18))
+      user-mail-address "marcoantonioponcevaldez@gmail.com")
 
+;; Theme
 (setq doom-theme 'doom-gruvbox)
+(setq doom-font (font-spec :family "Hack" :size 18))
+
+;; doom disables auto-save and backup files, lets reenable them
+(setq auto-save-default t
+      make-backup-files t)
+
+;; Disable exit confirmation
+(setq confirm-kill-emacs nil)
+;; Projectile
 (setq projectile-project-search-path '("~/code/"))
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type 'relative)
-
-;;(pyenv-mode)
 
 ;; Timer bell. Download the sound at https://freesound.org/people/.Andre_Onate/sounds/484665/
 (setq org-clock-sound "~/Music/sonidos/bell.wav")
@@ -64,6 +66,8 @@
       ;; If using org-roam-protocol
       (require 'org-roam-protocol))
 
+;; commonly-used org file
+;;(zz/add-file-keybinding "C-c z w" "~/org/work.org" "work.org")
 ;; calibre
 (use-package! calibredb
   :defer t
@@ -78,6 +82,12 @@
   (map! :leader
         ;;:prefix ("t". "toggle")
         :desc "List calibredb entries" "t t" #'calibredb)
+
+;; Info pages color
+(use-package! info-colors
+  :after info
+  :commands (info-colors-fontify-node)
+  :hook (Info-selection . info-colors-fontify-node))
 
 ;; nov - mode for reading epub
 (use-package! nov

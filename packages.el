@@ -53,6 +53,7 @@
 (package! calibredb)
 (package! org-auto-tangle)
 (package! nov)
+(package! info-colors)
 
 ;;(package! pyenv-mode)
 
