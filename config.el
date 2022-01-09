@@ -72,7 +72,7 @@
          "%(org-chef-get-recipe-from-url)"
          :empty-lines 1)
         ("m" "Manual Cookbook" entry (file "~/org/cookbook.org")
-         "* %^{Recipe title: }\n  :PROPERTIES:\n  :source-url:\n  :servings:\n  :prep-time:\n  :cook-time:\n  :ready-in:\n  :END:\n** Ingredients\n   %?\n** Directions\n\n")))
+         "* %^{Recipe title: }\n  :PROPERTIES:\n  :source-url:\n  :servings:\n  :prep-time:\n  :cook-time:\n  :ready-in:\n  :END:\n** Ingredients\n   %?\n** Directions\n\n"))))
 
 
 ;; commonly-used org file
@@ -86,11 +86,10 @@
   (setq calibredb-library-alist '(("~/home/holymc2/Calibre Library")))
   (setq calibredb-virtual-library-alist '(("1. Development - work" . "work \\(pdf\\|epub\\)")
                                           ("2. Read it later" . "Readit epub")
-                                          ("3. Development" . "dev")))
-  (setq evil-local-mode 'emacs))
+                                          ("3. Development" . "dev"))))
+  (evil-set-initial-state 'calibredb-search-mode 'emacs)
 
   (map! :leader
-        ;;:prefix ("t". "toggle")
         :desc "List calibredb entries" "t t" #'calibredb)
 
 ;; Info pages color
