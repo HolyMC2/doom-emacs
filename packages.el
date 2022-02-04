@@ -51,6 +51,7 @@
 
 (package! evil-tutor)
 (package! calibredb)
+(package! platformio-mode)
 (package! org-auto-tangle)
 (package! nov)
 (package! info-colors)
