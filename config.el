@@ -68,7 +68,16 @@
 ;; Org chef
 (after! org-capture
 (setq org-capture-templates
-      '(("c" "Cookbook" entry (file "~/org/cookbook.org")
+      '(("t" "Personal todo" entry
+           (file+headline +org-capture-todo-file "Inbox")
+           "* [ ] %?\n%i\n%a" :prepend t)
+          ("n" "Personal notes" entry
+           (file+headline +org-capture-notes-file "Inbox")
+           "* %u %?\n%i\n%a" :prepend t)
+          ("j" "Journal" entry
+           (file+olp+datetree +org-capture-journal-file)
+           "* %U %?\n%i\n%a" :prepend t)
+           ("c" "Cookbook" entry (file "~/org/cookbook.org")
          "%(org-chef-get-recipe-from-url)"
          :empty-lines 1)
         ("m" "Manual Cookbook" entry (file "~/org/cookbook.org")
