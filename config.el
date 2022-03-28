@@ -5,8 +5,8 @@
       user-mail-address "marcoantonioponcevaldez@gmail.com")
 
 ;; Theme
-(setq doom-theme 'doom-dracula)
-(setq doom-font (font-spec :family "Hack" :size 18)
+(setq doom-theme 'doom-gruvbox)
+(setq doom-font (font-spec :family "Hack" :size 22)
       doom-big-font (font-spec :family "Hack" :size 26)
       doom-variable-pitch-font (font-spec :family "sans" :size 20))
 
