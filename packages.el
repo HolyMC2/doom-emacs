@@ -54,6 +54,7 @@
 (package! platformio-mode)
 (package! org-auto-tangle)
 (package! nov)
+(package! exec-path-from-shell)
 (package! info-colors)
 (package! org-ol-tree
   :recipe (:host github :repo "Townk/org-ol-tree"))
