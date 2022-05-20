@@ -73,6 +73,12 @@
       '(("t" "Personal todo" entry
            (file+headline +org-capture-todo-file "Inbox")
            "* [ ] %?\n%i\n%a" :prepend t)
+          ("b" "Business todo" entry
+           (file+headline "~/org/business.org" "Inbox")
+           "* [ ] %?\n%i\n%a" :prepend t)
+          ("p" "personal blog" entry
+           (file+headline "~/org/business.org" "Inbox")
+           "* [ ] %?\n%i\n%a" :prepend t)
           ("n" "Personal notes" entry
            (file+headline +org-capture-notes-file "Inbox")
            "* %u %?\n%i\n%a" :prepend t)
@@ -150,3 +156,35 @@
 (when (daemonp)
   (exec-path-from-shell-initialize))
 (exec-path-from-shell-initialize)
+
+;; Ledger Mode
+(autoload 'ledger-mode "ledger-mode" "A major mode for Ledger" t)
+(add-to-list 'load-path
+             (expand-file-name "/home/holymc2/org/ledger/source/lisp/"))
+(add-to-list 'auto-mode-alist   '("\\.ledger$ . ledger-mode"))
+
+;;location of my maildir
+(setq mu4e-maildir (expand-file-name "~/Maildir"))
+
+;;command used to get mail
+;; use this for testing
+(setq mu4e-get-mail-command "true")
+;; use this to sync with mbsync
+;;(setq mu4e-get-mail-command "mbsync gmail")
+
+;;rename files when moving
+;;NEEDED FOR MBSYNC
+(setq mu4e-change-filenames-when-moving t)
+
+;;set up queue for offline email
+;;use mu mkdir  ~/Maildir/queue to set up first
+(setq smtpmail-queue-mail nil  ;; start in normal mode
+      smtpmail-queue-dir   "~/Maildir/queue/cur")
+;;(setq +mu4e-gmail-accounts '("marcoantonioponcevaldez@gmail.com" . "/home/holymc2/Maildir/mapv-gmail"))
+
+(after! mu4e
+  (setq sendmail-program (executable-find "msmtp")
+        send-mail-function #'smtpmail-send-it
+        message-sendmail-f-is-evil t
+        message-sendmail-extra-arguments '("--read-envelope-from")
+        message-send-mail-function #'message-send-mail-with-sendmail))

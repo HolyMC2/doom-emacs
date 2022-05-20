@@ -1,2 +1,1 @@
-
-alias ls exa -lah
+alias ls exa -lah --color=always --group-directories-first
