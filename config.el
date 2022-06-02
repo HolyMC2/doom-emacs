@@ -77,7 +77,7 @@
            (file+headline "~/org/business.org" "Inbox")
            "* [ ] %?\n%i\n%a" :prepend t)
           ("p" "personal blog" entry
-           (file+headline "~/org/business.org" "Inbox")
+           (file+headline "~/org/personal.org" "Inbox")
            "* [ ] %?\n%i\n%a" :prepend t)
           ("n" "Personal notes" entry
            (file+headline +org-capture-notes-file "Inbox")
