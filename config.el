@@ -30,7 +30,9 @@
 (setq org-directory "~/org")
 (after! org
   (setq org-agenda-files
-        '("~/org")))
+        (quote ("~/org"
+                "~/RoamNotes"
+                "~/org/journal"))))
 
 (setq org-pomodoro-length 25)
 
